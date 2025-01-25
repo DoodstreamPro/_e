@@ -7,165 +7,159 @@
   <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* General Reset and Body Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      background-color: #2d2d2d;
-      color: #ffa500; /* Dark orange */
+      background: linear-gradient(145deg, #f0f8ff, #dbeaff); /* Light gradient */
+      font-family: 'Roboto', sans-serif; /* Modern and premium font */
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
-    header, footer {
-      background-color: #1a1a1a;
-      color: #ffa500;
-      padding: 10px 0;
+    /* Header Styling */
+    header {
+      background: linear-gradient(135deg, #2196f3, #42a5f5); /* Vibrant gradient */
+      color: white;
+      padding: 30px 20px;
       text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+    /* Main Content Styling */
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #444;
+      margin-bottom: 20px;
     }
     .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px; /* Set max width for larger screens */
-      aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
-      background-color: #000;
-      border: 2px solid #ffa500;
-      border-radius: 8px;
+      display: inline-block;
+      background-color: #ffffff;
+      border-radius: 20px;
       overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid #f0f8ff; /* Soft border to match background */
     }
     video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Video fits the container without cropping */
+      display: block;
+      width: 100%; /* Video will scale automatically to fit the container */
+      height: auto; /* Maintain original video proportions */
+      border-radius: 18px; /* Match container border-radius */
+    }
+    /* Button Styling */
+    .btn-primary {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #42a5f5, #64b5f6);
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(66, 165, 245, 0.4);
+      transition: all 0.3s ease-in-out;
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #1e88e5, #42a5f5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(66, 165, 245, 0.6);
+    }
+    /* Footer Styling */
+    footer {
+      background: linear-gradient(135deg, #2196f3, #42a5f5);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+    }
+    footer p {
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>DoodStream Pro</h1>
+    <p>Watch your favorite videos anytime, anywhere</p>
   </header>
 
-  <main class="container">
-    <h2 id="videoTitle" class="text-center">Loading...</h2>
+  <!-- Main Content -->
+  <main>
+    <h2 id="videoTitle">Loading...</h2>
     <div class="video-container d-none" id="videoContainer">
       <video id="videoPlayer" controls>
         <source id="videoSource" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
+    <button class="btn-primary" onclick="location.href='/'">Go Back</button>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 DoodStream Pro</p>
+    <p>&copy; 2025 DoodStream Pro. All rights reserved.</p>
   </footer>
 
   <script>
-const _0x3c433c = _0x57fe;
-function _0x57fe(_0x14cd99, _0x4ddbad) {
-    const _0x544139 = _0x1da0();
-    return _0x57fe = function (_0x105f9d, _0x282228) {
-        _0x105f9d = _0x105f9d - (0x197b + -0x691 * 0x1 + -0x114d * 0x1);
-        let _0x599749 = _0x544139[_0x105f9d];
-        return _0x599749;
-    }, _0x57fe(_0x14cd99, _0x4ddbad);
-}
-(function (_0x3d847f, _0x414742) {
-    const _0x2b52fe = _0x57fe, _0x2b0788 = _0x3d847f();
-    while (!![]) {
-        try {
-            const _0x58d3fe = -parseInt(_0x2b52fe(0x1a0)) / (-0x10bb * 0x1 + 0x21d * -0xa + -0x4a * -0x83) + parseInt(_0x2b52fe(0x1bb)) / (0x2d * -0x75 + -0x24b * -0x4 + 0xb67) * (-parseInt(_0x2b52fe(0x1b6)) / (0x1539 + 0x9f8 + 0x1a * -0x133)) + parseInt(_0x2b52fe(0x1ba)) / (-0x1d4f + -0x8bd + 0x2610) + parseInt(_0x2b52fe(0x1cc)) / (-0x1 * -0x98e + -0x1571 * 0x1 + 0xbe8) * (parseInt(_0x2b52fe(0x1ae)) / (-0x443 * 0x1 + 0x78f * 0x1 + -0x346)) + parseInt(_0x2b52fe(0x1c8)) / (0xd5 * 0x25 + 0x1 * 0x1c19 + 0xd * -0x487) + parseInt(_0x2b52fe(0x19f)) / (-0x38c * -0x2 + -0x126b + 0x143 * 0x9) + -parseInt(_0x2b52fe(0x1a6)) / (0xd * 0x233 + -0x15ac + -0x1 * 0x6e2);
-            if (_0x58d3fe === _0x414742)
-                break;
-            else
-                _0x2b0788['push'](_0x2b0788['shift']());
-        } catch (_0x147112) {
-            _0x2b0788['push'](_0x2b0788['shift']());
-        }
+    // Ambil parameter query dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('v'); // Parameter 'v'
+
+    if (videoId) {
+      // Fetch JSON
+      fetch('Video.json')
+        .then(response => response.json())
+        .then(data => {
+          // Cari video berdasarkan ID
+          const videoData = data.find(video => video.id === videoId);
+
+          if (videoData) {
+            // Tampilkan judul dan video
+            document.getElementById('videoTitle').textContent = videoData.Judul;
+            document.getElementById('videoSource').src = videoData.Url;
+            document.getElementById('videoContainer').classList.remove('d-none'); // Tampilkan video container
+            document.getElementById('videoPlayer').load();
+          } else {
+            document.getElementById('videoTitle').textContent = 'Video not found';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching JSON:', error);
+          document.getElementById('videoTitle').textContent = 'Failed to load video data';
+        });
+    } else {
+      document.getElementById('videoTitle').textContent = 'No video ID provided';
     }
-}(_0x1da0, 0x8b79 * -0x21 + -0x111924 + 0x1 * 0x2d1e13));
-const urlParams = new URLSearchParams(window[_0x3c433c(0x1bd)][_0x3c433c(0x1b8)]), videoId = urlParams[_0x3c433c(0x1ca)]('v');
-videoId ? fetch(_0x3c433c(0x1b1))[_0x3c433c(0x1b3)](_0x12ba1e => _0x12ba1e[_0x3c433c(0x1bf)]())[_0x3c433c(0x1b3)](_0x68face => {
-    const _0x1b09bb = _0x3c433c, _0x5d8b95 = {
-            'PMIEa': _0x1b09bb(0x1b2),
-            'vuuia': _0x1b09bb(0x1c2) + 'e',
-            'RGcbs': _0x1b09bb(0x1c5) + _0x1b09bb(0x1ac),
-            'DPHpC': _0x1b09bb(0x1cb),
-            'YqxxV': _0x1b09bb(0x1ad) + 'r',
-            'JTKCg': _0x1b09bb(0x1b4) + _0x1b09bb(0x1c7)
-        }, _0x4fefb9 = _0x68face[_0x1b09bb(0x1a8)](_0x3e3d8c => _0x3e3d8c['id'] === videoId);
-    _0x4fefb9 ? (document[_0x1b09bb(0x1c4) + _0x1b09bb(0x1a7)](_0x5d8b95[_0x1b09bb(0x1b0)])[_0x1b09bb(0x1b7) + 't'] = _0x4fefb9[_0x1b09bb(0x19e)], document[_0x1b09bb(0x1c4) + _0x1b09bb(0x1a7)](_0x5d8b95[_0x1b09bb(0x1bc)])[_0x1b09bb(0x1c1)] = _0x4fefb9[_0x1b09bb(0x1aa)], document[_0x1b09bb(0x1c4) + _0x1b09bb(0x1a7)](_0x5d8b95[_0x1b09bb(0x1a3)])[_0x1b09bb(0x1a1)][_0x1b09bb(0x1a4)](_0x5d8b95[_0x1b09bb(0x1b9)]), document[_0x1b09bb(0x1c4) + _0x1b09bb(0x1a7)](_0x5d8b95[_0x1b09bb(0x1af)])[_0x1b09bb(0x1c0)]()) : document[_0x1b09bb(0x1c4) + _0x1b09bb(0x1a7)](_0x5d8b95[_0x1b09bb(0x1b0)])[_0x1b09bb(0x1b7) + 't'] = _0x5d8b95[_0x1b09bb(0x1c9)];
-})[_0x3c433c(0x1cf)](_0x4670d0 => {
-    const _0x2ed429 = _0x3c433c, _0x1a62e2 = {
-            'MnDnN': _0x2ed429(0x1c6) + _0x2ed429(0x1b5),
-            'XFaIH': _0x2ed429(0x1b2),
-            'WygsU': _0x2ed429(0x1cd) + _0x2ed429(0x1c3) + _0x2ed429(0x1ce)
-        };
-    console[_0x2ed429(0x1be)](_0x1a62e2[_0x2ed429(0x1ab)], _0x4670d0), document[_0x2ed429(0x1c4) + _0x2ed429(0x1a7)](_0x1a62e2[_0x2ed429(0x1a9)])[_0x2ed429(0x1b7) + 't'] = _0x1a62e2[_0x2ed429(0x1a5)];
-}) : document[_0x3c433c(0x1c4) + _0x3c433c(0x1a7)](_0x3c433c(0x1b2))[_0x3c433c(0x1b7) + 't'] = _0x3c433c(0x19d) + _0x3c433c(0x1a2);
-function _0x1da0() {
-    const _0x19fece = [
-        'error',
-        'json',
-        'load',
-        'src',
-        'videoSourc',
-        'load\x20video',
-        'getElement',
-        'videoConta',
-        'Error\x20fetc',
-        'found',
-        '3777438LWbiSm',
-        'JTKCg',
-        'get',
-        'd-none',
-        '8915dIebsM',
-        'Failed\x20to\x20',
-        '\x20data',
-        'catch',
-        'No\x20video\x20I',
-        'Judul',
-        '3111920GcHakU',
-        '963547rgvLIC',
-        'classList',
-        'D\x20provided',
-        'RGcbs',
-        'remove',
-        'WygsU',
-        '1793223zYHKjb',
-        'ById',
-        'find',
-        'XFaIH',
-        'Url',
-        'MnDnN',
-        'iner',
-        'videoPlaye',
-        '1470zCwrdY',
-        'YqxxV',
-        'PMIEa',
-        'Video.json',
-        'videoTitle',
-        'then',
-        'Video\x20not\x20',
-        'hing\x20JSON:',
-        '4722YitdaO',
-        'textConten',
-        'search',
-        'DPHpC',
-        '4856036jbqLPk',
-        '964onukMv',
-        'vuuia',
-        'location'
-    ];
-    _0x1da0 = function () {
-        return _0x19fece;
-    };
-    return _0x1da0();
-}
   </script>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
