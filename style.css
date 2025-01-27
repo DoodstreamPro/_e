@@ -30,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Ensure space between video and button */
+  padding-bottom: 10px; /* Ensure enough space at the bottom */
 }
 
 .video-header {
@@ -66,6 +67,9 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%; /* Ensure full width for WhatsApp button container */
+  position: relative;
+  z-index: 1; /* Ensure the button stays on top */
 }
 
 .whatsapp-btn {
