@@ -14,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+  flex-direction: column; /* Make the body flex column to position footer at the bottom */
 }
 
 /* Video Container */
@@ -85,4 +86,7 @@ footer {
   margin-top: 20px;
   color: #ffffffb3;
   font-size: 14px;
+  position: absolute; /* Set footer at the bottom */
+  bottom: 10px;
+  width: 100%; /* Ensure it takes up the full width */
 }
