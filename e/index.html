@@ -220,111 +220,35 @@ l.parentNode.insertBefore(s, l);
   </footer>
 
   <script>
-   function _0x4ee1(_0x11f61f, _0xabaeeb) {
-    const _0x362e05 = _0x476e();
-    return _0x4ee1 = function (_0x2db677, _0xa408c7) {
-        _0x2db677 = _0x2db677 - (0x153 * -0xd + 0x19 * 0xb1 + 0x14f);
-        let _0x3c46e7 = _0x362e05[_0x2db677];
-        return _0x3c46e7;
-    }, _0x4ee1(_0x11f61f, _0xabaeeb);
-}
-const _0x43b49c = _0x4ee1;
-(function (_0x31b0a6, _0x152a90) {
-    const _0x1842fa = _0x4ee1, _0x1aae2a = _0x31b0a6();
-    while (!![]) {
-        try {
-            const _0x33477f = -parseInt(_0x1842fa(0x189)) / (0x1107 + 0x20c * 0x1 + -0x1312) + parseInt(_0x1842fa(0x164)) / (0x1 * -0x227b + 0x17 * -0x17d + 0x2 * 0x225c) * (-parseInt(_0x1842fa(0x18d)) / (0x21a4 + 0xb2 * 0xd + -0x2aab)) + -parseInt(_0x1842fa(0x17f)) / (-0x21 * -0x9b + 0x1b0b + 0x2f02 * -0x1) * (-parseInt(_0x1842fa(0x16e)) / (0x1a25 + 0x12bd + 0x2cdd * -0x1)) + -parseInt(_0x1842fa(0x161)) / (-0x1776 + 0x44 * -0x32 + -0xd * -0x2d4) * (parseInt(_0x1842fa(0x18a)) / (0x1497 + 0x117f * -0x2 + -0x1 * -0xe6e)) + -parseInt(_0x1842fa(0x192)) / (-0x1bd * -0x1 + 0x2 * -0x5b3 + 0x9b1) * (-parseInt(_0x1842fa(0x190)) / (-0x1846 + -0x55 * 0x33 + 0x293e * 0x1)) + -parseInt(_0x1842fa(0x197)) / (-0x722 + 0xd * -0x167 + -0x7 * -0x3a1) * (-parseInt(_0x1842fa(0x16d)) / (0x1777 + 0x17aa + 0x3 * -0xfb2)) + parseInt(_0x1842fa(0x181)) / (0xb62 + -0x24e3 + 0xd3 * 0x1f);
-            if (_0x33477f === _0x152a90)
-                break;
-            else
-                _0x1aae2a['push'](_0x1aae2a['shift']());
-        } catch (_0x3b31d7) {
-            _0x1aae2a['push'](_0x1aae2a['shift']());
-        }
+    // Ambil parameter query dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('v'); // Parameter 'v'
+
+    if (videoId) {
+      // Fetch JSON
+      fetch('../Video.json')
+        .then(response => response.json())
+        .then(data => {
+          // Cari video berdasarkan ID
+          const videoData = data.find(video => video.id === videoId);
+
+          if (videoData) {
+            // Tampilkan judul dan video
+            document.getElementById('videoTitle').textContent = videoData.Judul;
+            document.getElementById('videoSource').src = videoData.Url;
+            document.getElementById('videoContainer').classList.remove('d-none'); // Tampilkan video container
+            document.getElementById('videoPlayer').load();
+          } else {
+            document.getElementById('videoTitle').textContent = 'Video not found';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching JSON:', error);
+          document.getElementById('videoTitle').textContent = 'Failed to load video data';
+        });
+    } else {
+      document.getElementById('videoTitle').textContent = 'tobatlah wahai anak muda';
     }
-}(_0x476e, -0x447fd + 0x1 * 0x266d + 0x1 * 0x7541c));
-const urlParams = new URLSearchParams(window[_0x43b49c(0x169)][_0x43b49c(0x168)]), videoId = urlParams[_0x43b49c(0x186)]('v');
-function _0x476e() {
-    const _0x73b20d = [
-        '6560640OXnKlD',
-        'ltDse',
-        'json',
-        'getElement',
-        'tobatlah\x20w',
-        'get',
-        'src',
-        'hing\x20JSON:',
-        '200215OUXHJh',
-        '2191vyBxTJ',
-        'Video.json',
-        'd-none',
-        '1125789cRIcei',
-        'Failed\x20to\x20',
-        'gMgUj',
-        '81XioYPn',
-        'tWvlB',
-        '207944nBRPWR',
-        '\x20data',
-        'IczPf',
-        'textConten',
-        'Url',
-        '662090wdheXt',
-        '6708cdUuLA',
-        'ahai\x20anak\x20',
-        'error',
-        '2HZoyii',
-        'Judul',
-        'Video\x20not\x20',
-        'xdMnj',
-        'search',
-        'location',
-        'classList',
-        'videoConta',
-        'load\x20video',
-        '33UCrHFT',
-        '64865mkBquH',
-        'Error\x20fetc',
-        'muda',
-        'UlnST',
-        'iner',
-        'catch',
-        'bFXRi',
-        'find',
-        'videoTitle',
-        'remove',
-        'load',
-        'DdfPF',
-        'videoPlaye',
-        'ById',
-        'vAVkl',
-        'videoSourc',
-        'found',
-        '48SWPjGm',
-        'then'
-    ];
-    _0x476e = function () {
-        return _0x73b20d;
-    };
-    return _0x476e();
-}
-videoId ? fetch(_0x43b49c(0x18b))[_0x43b49c(0x180)](_0x4d4dba => _0x4d4dba[_0x43b49c(0x183)]())[_0x43b49c(0x180)](_0x2e6c01 => {
-    const _0x1b6ac3 = _0x43b49c, _0x453d4a = {
-            'IczPf': _0x1b6ac3(0x176),
-            'bFXRi': _0x1b6ac3(0x17d) + 'e',
-            'UlnST': _0x1b6ac3(0x16b) + _0x1b6ac3(0x172),
-            'gMgUj': _0x1b6ac3(0x18c),
-            'xdMnj': _0x1b6ac3(0x17a) + 'r',
-            'tWvlB': _0x1b6ac3(0x166) + _0x1b6ac3(0x17e)
-        }, _0x1b7cb9 = _0x2e6c01[_0x1b6ac3(0x175)](_0xeb15a9 => _0xeb15a9['id'] === videoId);
-    _0x1b7cb9 ? (document[_0x1b6ac3(0x184) + _0x1b6ac3(0x17b)](_0x453d4a[_0x1b6ac3(0x194)])[_0x1b6ac3(0x195) + 't'] = _0x1b7cb9[_0x1b6ac3(0x165)], document[_0x1b6ac3(0x184) + _0x1b6ac3(0x17b)](_0x453d4a[_0x1b6ac3(0x174)])[_0x1b6ac3(0x187)] = _0x1b7cb9[_0x1b6ac3(0x196)], document[_0x1b6ac3(0x184) + _0x1b6ac3(0x17b)](_0x453d4a[_0x1b6ac3(0x171)])[_0x1b6ac3(0x16a)][_0x1b6ac3(0x177)](_0x453d4a[_0x1b6ac3(0x18f)]), document[_0x1b6ac3(0x184) + _0x1b6ac3(0x17b)](_0x453d4a[_0x1b6ac3(0x167)])[_0x1b6ac3(0x178)]()) : document[_0x1b6ac3(0x184) + _0x1b6ac3(0x17b)](_0x453d4a[_0x1b6ac3(0x194)])[_0x1b6ac3(0x195) + 't'] = _0x453d4a[_0x1b6ac3(0x191)];
-})[_0x43b49c(0x173)](_0x51581a => {
-    const _0x35e22c = _0x43b49c, _0x4fdf14 = {
-            'DdfPF': _0x35e22c(0x16f) + _0x35e22c(0x188),
-            'ltDse': _0x35e22c(0x176),
-            'vAVkl': _0x35e22c(0x18e) + _0x35e22c(0x16c) + _0x35e22c(0x193)
-        };
-    console[_0x35e22c(0x163)](_0x4fdf14[_0x35e22c(0x179)], _0x51581a), document[_0x35e22c(0x184) + _0x35e22c(0x17b)](_0x4fdf14[_0x35e22c(0x182)])[_0x35e22c(0x195) + 't'] = _0x4fdf14[_0x35e22c(0x17c)];
-}) : document[_0x43b49c(0x184) + _0x43b49c(0x17b)](_0x43b49c(0x176))[_0x43b49c(0x195) + 't'] = _0x43b49c(0x185) + _0x43b49c(0x162) + _0x43b49c(0x170);
   </script>
 
   <!-- Bootstrap JS -->
