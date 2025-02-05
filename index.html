@@ -214,7 +214,7 @@
 
           if (videoData) {
             // Tampilkan judul dan video
-            
+            document.title = videoData.Judul;
             document.getElementById('videoSource').src = videoData.Url;
             document.getElementById('videoContainer').classList.remove('d-none'); // Tampilkan video container
             document.getElementById('videoPlayer').load();
